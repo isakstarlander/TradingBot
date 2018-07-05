@@ -1,1 +1,0 @@
-web: gunicorn manticorn.wsgi --log-file -

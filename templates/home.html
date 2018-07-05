@@ -2,10 +2,12 @@
 
 {% block content %}
 <h1>Homepage</h1>
-<ul>
-    {% for post in object_list %}
-        <li>{{ post }}</li>
-    {% endfor %}
-</ul>
+{% if user.is_authenticated %}
+    <ul>
+        {% for post in object_list %}
+            <li>{{ post }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
         
 {% endblock %}

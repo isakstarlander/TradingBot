@@ -1,5 +1,7 @@
 from django.views.generic import ListView, TemplateView
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from . import models
 
 # Create your views here.
@@ -9,5 +11,6 @@ from . import models
 #     # model = models.Article 
 #     template_name = 'portfolio_index.html'
 
-class PortfolioView(TemplateView):
+class PortfolioView(LoginRequiredMixin, TemplateView):
     template_name = 'portfolio_index.html'
+    login_url = 'login'

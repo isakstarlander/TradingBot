@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 
     # Local
     'home',
+    'analysis',
+    'portfolio',
 ]
 
 MIDDLEWARE = [

@@ -1,20 +1,69 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html> 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link 
+    <!-- <link 
         rel="stylesheet" 
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
         crossorigin="anonymous"
-    >
-    <title>Manticore | {% block title %}Title{% endblock title %}</title> 
+    > -->
+    <title>Manticore | {% block title %}Title{% endblock title %}</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_head %}{% endblock %}
 </head>
 <body> 
-    
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+ 
+    <header>
+        <nav>
+            <h1>Manticore</h1>
+            <i id="navbar__toggle" class="fas fa-ellipsis-h" onclick="toggleMenu()"></i>
+            <ul id="navbar__menu">
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <li><button>Login</button></li>
+                <li><button>Sign up</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const menuIcon = document.getElementById("navbar__toggle");
+            const menu = document.getElementById("navbar__menu");
+            menu.style.display = (menu.style.display === "" || menu.style.display === "none") 
+                ? "flex" 
+                : "none";
+            if (menuIcon.classList.contains("fa-ellipsis-h")) {
+                menuIcon.classList.remove("fa-ellipsis-h")
+                menuIcon.classList.add("fa-ellipsis-v")
+            } else {
+                menuIcon.classList.remove("fa-ellipsis-v")
+                menuIcon.classList.add("fa-ellipsis-h")
+            }
+        }
+    </script>
+
+    <!-- <main class="container">
+        {% block content %}
+            
+        {% endblock %}
+    </main>
+
+    <footer>
+        Footer Text
+    </footer> -->
+
+</body> 
+</html>
+
+    <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <a class="navbar-brand" href="{% url 'home' %}">Manticore</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,12 +89,4 @@
             </form>
         {% endif %} 
         </div>
-    </nav>
-        
-    <div class="container">
-        {% block content %}
-            
-        {% endblock %}
-    </div>
-</body> 
-</html>
+    </nav> -->

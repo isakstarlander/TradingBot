@@ -1,0 +1,61 @@
+@media (min-width: 992px) {
+    body {
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    body > header {
+        min-height: 75px;
+    }
+
+    body > main {
+        min-height: 100vh;
+    }
+
+    body > footer {
+        min-height: 200px;
+        width: 100vw;
+        background: grey;
+    }
+    
+    nav {
+        position: fixed;
+        width: 100vw;
+        min-height: 75px;
+        display: flex;
+        background: white;
+        align-items: center;
+    }
+    
+    nav h1 {
+        margin: 0;
+        margin-right: auto;
+        padding-left: 20px;
+        font-size: 36px;
+    }
+    
+    #navbar__toggle {
+        display: none;
+    }
+    
+    ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        align-items: flex-end;
+    }
+    
+    nav li {
+        text-align: center;
+        padding: 5px;
+        width: 100px;
+    }
+    
+    nav button {
+        width: 100px;
+        height: 30px;
+        background: #eee;
+        border-radius: 10px;
+    }
+}

@@ -1,20 +1,76 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html> 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link 
+    <!-- <link 
         rel="stylesheet" 
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
         crossorigin="anonymous"
-    >
-    <title>Manticore | {% block title %}Title{% endblock title %}</title> 
+    > -->
+    <title>Manticore | {% block title %}Title{% endblock title %}</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base_mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base_tablet.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base_desktop.css' %}">
+    {% block extra_head %}{% endblock %}
 </head>
 <body> 
-    
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+ 
+    <header>
+        <nav>
+            <h1>Manticore</h1>
+            <i id="navbar__toggle" class="fas fa-bars" onclick="toggleMenu()"></i>
+            <ul id="navbar__menu">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li>About</li>
+                <li>Contact</li>
+                {% if user.is_authenticated %}
+                    <li>Profile</li>
+                    <li><button class="button__logout" onclick="location.href='{% url 'logout' %}'">Logout</button></li>
+                {% else %}
+                    <li><button class="button__login" onclick="location.href='{% url 'login' %}'">Login</button></li>
+                    <li><button class="button__signup" onclick="location.href='{% url 'signup' %}'">Sign up</button></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}
+            
+        {% endblock %}
+    </main>
+
+    <footer>
+        Footer Text
+    </footer>
+
+</body> 
+</html>
+
+<script>
+    function toggleMenu() {
+        const menuIcon = document.getElementById("navbar__toggle");
+        const menu = document.getElementById("navbar__menu");
+        menu.style.display = (menu.style.display === "" || menu.style.display === "none") 
+            ? "flex" 
+            : "none";
+        if (menuIcon.classList.contains("fa-bars")) {
+            menuIcon.classList.remove("fa-bars")
+                menuIcon.classList.add("fa-times")
+        } else {
+            menuIcon.classList.remove("fa-times")
+            menuIcon.classList.add("fa-bars")
+        }
+    }
+</script>
+
+    <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <a class="navbar-brand" href="{% url 'home' %}">Manticore</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,12 +96,4 @@
             </form>
         {% endif %} 
         </div>
-    </nav>
-        
-    <div class="container">
-        {% block content %}
-            
-        {% endblock %}
-    </div>
-</body> 
-</html>
+    </nav> -->

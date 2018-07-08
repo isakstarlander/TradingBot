@@ -14,6 +14,7 @@
     > -->
     <title>Manticore | {% block title %}Title{% endblock title %}</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro">
     <link rel="stylesheet" href="{% static 'css/base_mobile.css' %}">
     <link rel="stylesheet" href="{% static 'css/base_tablet.css' %}">
     <link rel="stylesheet" href="{% static 'css/base_desktop.css' %}">
@@ -23,18 +24,24 @@
  
     <header>
         <nav>
-            <h1>Manticore</h1>
+            <h1><a href="{% url 'home' %}">Manticore</a></h1>
             <i id="navbar__toggle" class="fas fa-bars" onclick="toggleMenu()"></i>
             <ul id="navbar__menu">
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li>About</li>
-                <li>Contact</li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
                 {% if user.is_authenticated %}
-                    <li>Profile</li>
-                    <li><button class="button__logout" onclick="location.href='{% url 'logout' %}'">Logout</button></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a class="button" id="button__logout" href="{% url 'logout' %}">Logout</a></li>
+                    <!-- <li><button class="button__logout" onclick="location.href='{% url 'logout' %}'">Logout</button></li> -->
                 {% else %}
-                    <li><button class="button__login" onclick="location.href='{% url 'login' %}'">Login</button></li>
-                    <li><button class="button__signup" onclick="location.href='{% url 'signup' %}'">Sign up</button></li>
+                    <li>
+                        <a class="button" id="button__signup" href="{% url 'signup' %}">Sign up</a>
+                        <a class="button" id="button__login" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <!-- <li><a class="button" id="button__signup" href="{% url 'signup' %}">Sign up</a></li> -->
+                    <!-- <li><button class="button__login" onclick="location.href='{% url 'login' %}'">Login</button></li>
+                    <li><button class="button__signup" onclick="location.href='{% url 'signup' %}'">Sign up</button></li> -->
                 {% endif %}
             </ul>
         </nav>
@@ -47,7 +54,7 @@
     </main>
 
     <footer>
-        Footer Text
+        <!-- Footer Text -->
     </footer>
 
 </body> 
@@ -69,31 +76,3 @@
         }
     }
 </script>
-
-    <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-        <a class="navbar-brand" href="{% url 'home' %}">Manticore</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-        {% if user.is_authenticated %} 
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ user.username }}
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-                        <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
-                    </div>
-                </li>
-            </ul>
-        {% else %}
-            <form class="form-inline ml-auto">
-                <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
-                <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a> 
-            </form>
-        {% endif %} 
-        </div>
-    </nav> -->

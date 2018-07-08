@@ -1,15 +1,98 @@
-@media screen and (max-width: 767px) {
-    svg {
-        display: block;
-        width: 100%;
-        height: 80vh;
-    }
-    svg > a:first-child > path {
-        cursor: pointer;
-        fill: #ccc;
-      }
-      svg > a:last-child > path {
-        cursor: pointer;
-        fill: #999;
-      }
+.svg--lg {
+    display: none;
+}
+svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+}
+.header__shade {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(#ffffff, #ff9e2f66, #ff444780);
+}
+
+section {
+    text-align: center;
+}
+
+section > header {
+    position: relative;
+    height: 400px;
+    background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=281dd3518c2edb68c31b19bbcb624a0f&auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+}
+
+section > header h1 {
+    position: relative;
+    padding-top: 100px;
+    text-align: center;
+    color: white;
+    margin: 0;
+    z-index: 1;
+}
+section > header p {
+    position: relative;
+    text-align: center;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+section > header span {
+    font-size: 20px;
+    font-weight: 600;
+}
+section > article {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+}
+
+section > article header {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+section > article h1 {
+    height: 175px;
+    margin: 0;
+}
+
+section > article h1 a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.5);
+    text-decoration: none;
+}
+
+section > article figure {
+    width: 100%;
+    height: 175px;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+section > article img {
+    width: 100%;
+    display: block;
+}
+
+.divider__h {
+    border-top: 2px solid grey;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.divider__v {
+    display: none;
 }

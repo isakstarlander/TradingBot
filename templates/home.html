@@ -3,21 +3,56 @@
 {% block title %}Home{% endblock %}
 {% block extra_head %}
     <link rel="stylesheet" type="text/css" href="/static/css/home_mobile.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/home_desktop.css" />
 {% endblock %}
 
 {% block content %}
 
-<svg viewBox="0 0 100 100" preserveAspectRatio="none">
-    <a href="#1">
-        <path d="M 0 0 L 100 100 L 100 0 z"></path>
-    </a>
-    <a href="#2">
-        <path d="M 100 100 L 0 100 L 0 0 z"></path>
-    </a>
-</svg>
-<!-- <h1>Home page view</h1>
-{% if user.is_authenticated %}
-    Hi {{ user.username }}!
-{% endif %} -->
+<section>
+    <header>
+        {% if user.is_authenticated %}
+            <h1>Welcome back {{ user.username }}</h1>
+            <p>We are <span>glad</span> you have joined the <span>AI-investment</span> revolution</p>
+        {% else %}
+            <h1>Welcome</h1>
+            <p>Join the <span>AI-investment</span> revolution</p>
+        {% endif %}
+        <div class="header__shade"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon class="svg--sm" fill="white" points="0,100 0,80 10,100 30,40 45,60 60,20 80,80 95,0 100,20 100,100"/>
+            <polygon class="svg--lg" fill="white" points="0,100 0,90 10,80 25,100 35,60 45,95 50,75 55,100 65,20 75,70 85,20 92,50 100,0 100,100" />
+        </svg>
+    </header>
+    <article>
+        <header>
+            <h1><a href="{% url 'analysis' %}">Analysis</a></h1>
+        </header>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1521452967839-27ce29d2820d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ba46274bc99ca716a4ac20b102c03994&auto=format&fit=crop&w=1662&q=80" alt="">
+        </figure>
+        {% if user.is_authenticated %}
+            <p>Use our tools to analyse your market of interest</p>
+        {% else %}
+            <p>Join us to make use of our high quality tools for a unique analysis experience</p>
+        {% endif %}
+    </article>
+
+    <div class="divider__h"></div>
+    <div class="divider__v"></div>
+
+    <article>
+        <header>
+            <h1><a href="{% url 'portfolio' %}">Portfolio</a></h1>
+        </header>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1473445195779-499faea82cb7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=50afc673529fa1680061c2f47331b298&auto=format&fit=crop&w=1568&q=80" alt="">
+        </figure>
+        {% if user.is_authenticated %}
+            <p>Manage and view your own portfolio of investments</p>
+        {% else %}
+            <p>Become a member to create your own portfolio of AI-investments</p>
+        {% endif %}
+    </article>
+</section>
 
 {% endblock %}

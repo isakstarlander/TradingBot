@@ -124,14 +124,15 @@ nav li:last-child a:first-child {
 
 #button__logout {
     margin: 0;
-    border-color: #ff4447;
-    background: #ff4447;
-    color: white;
+    border: 0;
+    color: #ff4447;
+    transition: 0s;
 }
 
 #button__logout:hover {
     background: white;
-    color: #ff4447;
+    color: #ff444780;
+    border: 2px solid #ff444780;
 }
 
 nav button {

@@ -1,28 +1,41 @@
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
     body {
         min-height: 100vh;
         margin: 0;
         background: orange;
     }
+
+    body > header {
+        min-height: 75px;
+    }
+
+    body > footer {
+        min-height: 200px;
+        width: 100vw;
+        background: grey;
+        position: absolute;
+        bottom: 0;
+    }
     
     nav {
         position: fixed;
         width: 100vw;
-        min-height: 50px;
+        min-height: 75px;
     }
     
     nav h1 {
         margin: 0;
         padding-left: 20px;
-        height: 50px;
-        line-height: 50px;
+        height: 75px;
+        line-height: 75px;
         background: white;
+        font-size: 36px;
     }
     
     #navbar__toggle {
         position: fixed;
         font-size: 30px;
-        top: 10px;
+        top: 20px;
         right: 20px;
     }
     
@@ -31,21 +44,21 @@
         flex-direction: column;
         padding: 0;
         margin: 0;
-        background: rgba(255,255,255,0.5);
+        background: rgba(255,255,255,0.75);
         list-style: none;
         align-items: center;
         width: 100vw;
     }
     
     nav li {
-        width: 100%;
         text-align: center;
-        padding: 10px;
-        border-top: 1px solid black;
+        padding: 5px;
     }
     
-    nav li button {
-        width: 60px;
-        height: 25px;
+    nav button {
+        width: 100px;
+        height: 30px;
+        background: #eee;
+        border-radius: 10px;
     }
 }

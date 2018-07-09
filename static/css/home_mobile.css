@@ -24,6 +24,7 @@ section > header {
     position: relative;
     height: 400px;
     background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=281dd3518c2edb68c31b19bbcb624a0f&auto=format&fit=crop&w=1500&q=80');
+    /* background-image: url('https://i.giphy.com/media/ygAaR0n5RsyAM/giphy.webp'); */
     background-size: cover;
     background-position: center;
     justify-content: center;

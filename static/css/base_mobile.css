@@ -159,6 +159,11 @@ footer > article aside {
     margin: 16px 0;
     display: flex;
     justify-content: space-evenly;
+    font-size: 24px;
+}
+
+footer > article h1, footer > article p, footer > article aside a {
+    color: white;
 }
 
 footer > iframe {

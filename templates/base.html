@@ -24,10 +24,10 @@
             <i id="navbar__toggle" class="fas fa-bars" onclick="toggleMenu()"></i>
             <ul id="navbar__menu">
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
                 {% if user.is_authenticated %}
-                    <li><a href="">Profile</a></li>
+                    <li><a href="#profile">Profile</a></li>
                     <li><a class="button" id="button__logout" href="{% url 'logout' %}">Logout</a></li>
                 {% else %}
                     <li>
@@ -54,9 +54,9 @@
             <p>Text-line-two</p>
             <p>Text-line-three</p>
             <aside>
-                <i class="fab fa-linkedin-in"></i>
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
+                <a href="#linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#twitter"><i class="fab fa-twitter"></i></a>
             </aside>
         </article>
         <iframe src="" frameborder="0"></iframe>

@@ -3,6 +3,11 @@
         min-height: 75px;
     }
 
+    body > footer {
+        height: 50vw;
+        flex-direction: row;
+    }
+
     nav {
         min-height: 75px;
     }
@@ -15,5 +20,10 @@
 
     #navbar__toggle {
         top: 20px;
+    }
+
+    footer > article, footer > iframe {
+        width: 50%;
+        height: 100%;
     }
 }

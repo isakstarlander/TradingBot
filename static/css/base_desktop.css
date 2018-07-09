@@ -2,6 +2,11 @@
     body > header {
         min-height: 75px;
     }
+
+    body > footer {
+        height: 50vw;
+        flex-direction: row;
+    }
     
     nav {
         min-height: 75px;
@@ -24,5 +29,10 @@
         display: flex !important;
         flex-direction: row;
         justify-content: flex-end;
+    }
+
+    footer > article, footer > iframe {
+        width: 50%;
+        height: 100%;
     }
 }

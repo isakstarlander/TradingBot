@@ -6,22 +6,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- <link 
-        rel="stylesheet" 
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
-        crossorigin="anonymous"
-    > -->
     <title>Manticore | {% block title %}Title{% endblock title %}</title>
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro">
     <link rel="stylesheet" href="{% static 'css/base_mobile.css' %}">
     <link rel="stylesheet" href="{% static 'css/base_tablet.css' %}">
     <link rel="stylesheet" href="{% static 'css/base_desktop.css' %}">
+    
+    <script src="{% static 'js/base.js' %}"></script>
     {% block extra_head %}{% endblock %}
 </head>
 <body> 
- 
     <header>
         <nav>
             <h1><a href="{% url 'home' %}">Manticore</a></h1>
@@ -33,15 +29,11 @@
                 {% if user.is_authenticated %}
                     <li><a href="">Profile</a></li>
                     <li><a class="button" id="button__logout" href="{% url 'logout' %}">Logout</a></li>
-                    <!-- <li><button class="button__logout" onclick="location.href='{% url 'logout' %}'">Logout</button></li> -->
                 {% else %}
                     <li>
                         <a class="button" id="button__signup" href="{% url 'signup' %}">Sign up</a>
                         <a class="button" id="button__login" href="{% url 'login' %}">Login</a>
                     </li>
-                    <!-- <li><a class="button" id="button__signup" href="{% url 'signup' %}">Sign up</a></li> -->
-                    <!-- <li><button class="button__login" onclick="location.href='{% url 'login' %}'">Login</button></li>
-                    <li><button class="button__signup" onclick="location.href='{% url 'signup' %}'">Sign up</button></li> -->
                 {% endif %}
             </ul>
         </nav>
@@ -59,20 +51,3 @@
 
 </body> 
 </html>
-
-<script>
-    function toggleMenu() {
-        const menuIcon = document.getElementById("navbar__toggle");
-        const menu = document.getElementById("navbar__menu");
-        menu.style.display = (menu.style.display === "" || menu.style.display === "none") 
-            ? "flex" 
-            : "none";
-        if (menuIcon.classList.contains("fa-bars")) {
-            menuIcon.classList.remove("fa-bars")
-                menuIcon.classList.add("fa-times")
-        } else {
-            menuIcon.classList.remove("fa-times")
-            menuIcon.classList.add("fa-bars")
-        }
-    }
-</script>

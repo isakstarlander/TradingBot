@@ -41,6 +41,13 @@ section > header span {
     font-size: 20px;
     font-weight: 600;
 }
+
+.errorlist {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    color:  #ff444780;
+}
 section > form label {
     display: none;
 }

@@ -1,14 +1,26 @@
 {% extends 'base.html' %}
 
 {% block title %}Login{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/css/login_mobile.css" />
+    <link rel="stylesheet" href="/static/css/login_desktop.css" />
+{% endblock %}
 
 {% block content %} 
 
-<h2>Login</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
+<section>
+    <header>
+        <h1>Login</h1>
+        <p>Enter our world of <span>Machine Learning</span></p>
+        <div class="header__shade"></div>
+    </header>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <p><a href="{% url 'password_reset' %}">Forgot password?</a><a href="{% url 'signup' %}">Don't have an account?</a></p>
+</section>
 
 {% endblock %}

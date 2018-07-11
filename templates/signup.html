@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
 
 {% block title %}Sign Up{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/css/signup_mobile.css" />
+    <link rel="stylesheet" href="/static/css/signup_desktop.css" />
+{% endblock %}
 
 {% block content %}
 
-<h2>Sign up</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-</form>
+<section>
+    <header>
+        <h1>Signup</h1>
+        <p>Enter our world of <span>Machine Learning</span></p>
+        <div class="header__shade"></div>
+    </header>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign up</button>
+    </form>
+</section>
 
 {% endblock %}

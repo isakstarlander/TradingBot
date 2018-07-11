@@ -1,0 +1,76 @@
+.header__shade {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(#ffffff, #ff9e2f66, #ff444780);
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+}
+
+section {
+    text-align: center;
+}
+
+section > header {
+    position: relative;
+    height: 400px;
+    background-image: url('https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395debe4f66b27cd8fb346d73cffb70c&auto=format&fit=crop&w=1332&q=80');
+    background-size: cover;
+    background-position: center;
+    border-bottom-left-radius: 50% 30%;
+    border-bottom-right-radius: 50% 30%;
+}
+
+section > header h1 {
+    position: relative;
+    padding-top: 100px;
+    text-align: center;
+    color: white;
+    margin: 0;
+    z-index: 1;
+}
+section > header p {
+    position: relative;
+    text-align: center;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+section > header span {
+    font-size: 20px;
+    font-weight: 600;
+}
+section> form label, section > form ul, .helptext {
+    display: none;
+}
+.errorlist {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+}
+section > form input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    width: 300px;
+    padding: 0 20px;
+    font-size: 16px;
+}
+section > form button {
+    transition: 0.2s linear;
+    padding: 5px 5px;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid #ff4447;
+    background: white;
+    color: #ff4447;
+}
+
+section > form button:hover {
+    background: #ff4447;
+    color: white;
+    cursor: pointer;
+}
